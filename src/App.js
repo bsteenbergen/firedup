@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import Map from './Map.js'
+import { useState, useEffect } from "react"
+import FireMap from "./FireMap.js"
 
 function App() {
   // const [eventData, setEventData] = useState([]);
@@ -19,11 +19,11 @@ function App() {
 
   return (
     <div>
-      <Map />
+      <FireMap />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 
 // Content created with reference to Traversy Media's video: https://www.youtube.com/watch?v=ontX4zfVqK8
