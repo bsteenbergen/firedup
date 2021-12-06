@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 import FireMap from "./FireMap.js"
+import Header from "./Header.js"
+import SafetyTips from "./SafetyTips.js"
 
 export default function App() {
   const [eventData, setEventData] = useState([])
@@ -16,6 +18,7 @@ export default function App() {
 
   return (
     <div>
+      <Header />
       <FireMap eventData={eventData} />
     </div>
   )

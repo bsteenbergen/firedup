@@ -2,7 +2,7 @@ import React from "react"
 import icon from "./fire.png"
 import "./FireMarker.css"
 
-const FireMarker = ({ lat, lng }) => {
+const FireMarker = () => {
   return (
     <div className="marker">
       <img
