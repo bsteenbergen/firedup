@@ -19,6 +19,7 @@ export default function App() {
   return (
     <div>
       <Header />
+      {/* <SafetyTips /> */}
       <FireMap eventData={eventData} />
     </div>
   )
