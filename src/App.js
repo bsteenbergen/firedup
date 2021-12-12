@@ -4,6 +4,7 @@ import Header from "./Header.js"
 import { SignIn, SignOut, useAuthentication } from "./authService.js"
 import { fetchArticles, createArticle } from "./articleService.js"
 import SafetyTips from "./SafetyTips.js"
+import Home from "./Home.js"
 
 export default function App() {
   const [eventData, setEventData] = useState([])
@@ -11,6 +12,7 @@ export default function App() {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(false)
+  const [page, setPage] = useState("home")
   useEffect(() => {
     if (user) {
       fetchArticles().then(setArticles)
@@ -28,12 +30,13 @@ export default function App() {
   }, [])
 
   return (
-    <div>
-      {/* <SafetyTips /> */}
-      {!user ? <SignIn /> : <SignOut />}
-      {!user ? "" : <Header />}
-      {!user ? "" : <FireMap eventData={eventData} />}
-    </div>
+    page === "home" ? 
+    (<div>
+      <button onClick={() => setPage("SafetyTips")}> SafetyTips </button>
+      <Home eventData={eventData} user={user}/> 
+    </div>) :
+    page == "SafetyTips" ? <SafetyTips eventData={eventData} user={user}/> : 
+    "That's not supposed to happen"
   )
 }
 

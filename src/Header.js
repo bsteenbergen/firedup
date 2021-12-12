@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div className="header">
       <h1>FIREDUP!</h1>
-      <a href="./SafetyTips">Safety Tips</a>
+      {/* <a href="./SafetyTips">Safety Tips</a> */}
       <label>
         Home Location:
         <input type="text" name="Home Location" />
