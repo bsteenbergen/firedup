@@ -29,13 +29,14 @@ export default function App() {
     fetchEvents()
   }, [])
 
-  return (
-    page === "home" ? 
-    (<div>
+  return page === "home" ? (
+    <div>
       <button onClick={() => setPage("SafetyTips")}> SafetyTips </button>
-      <Home eventData={eventData} user={user}/> 
-    </div>) :
-    page == "SafetyTips" ? <SafetyTips eventData={eventData} user={user}/> : 
+      <Home eventData={eventData} user={user} />
+    </div>
+  ) : page == "SafetyTips" ? (
+    <SafetyTips eventData={eventData} user={user} />
+  ) : (
     "That's not supposed to happen"
   )
 }

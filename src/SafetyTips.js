@@ -1,18 +1,17 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import "./SafetyTips.css"
 import Home from "./Home.js"
 
-
-const SafetyTips = (user,eventData ) => {
+const SafetyTips = (user, eventData) => {
   const [page, setPage] = useState("SafetyTips")
-  return (
-    page === "home" ? 
-    <Home eventData={eventData} user={user}/> :
-    page == "SafetyTips" ? (
+  return page === "home" ? (
+    <Home eventData={eventData} user={user} />
+  ) : page == "SafetyTips" ? (
     <div className="safetytips">
       <h1>Stay Safe Friends</h1>
       <button onClick={() => setPage("home")}> Home </button>
-    </div>) : 
+    </div>
+  ) : (
     "That's not supposed to happen"
   )
 }
