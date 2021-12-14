@@ -4,11 +4,13 @@ export default function Location({ article }) {
       {!article ? (
         <p></p>
       ) : (
-        <section>
-          <h2>{article.title}</h2>
-          <p className="currentLoc">{`Posted: ${article.currentLoc}`}</p>
-          <p className="homeLoc">{article.homeLoc}</p>
-        </section>
+        <location>
+          <section>
+            <h2>{article.title}</h2>
+            <p className="currentLoc">{`Current Location: ${article.currentLoc}`}</p>
+            <p className="homeLoc">{`Home Location: ${article.homeLoc}`}</p>
+          </section>
+        </location>
       )}
     </article>
   )
