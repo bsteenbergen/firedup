@@ -29,6 +29,14 @@ export default function App() {
     fetchEvents()
   }, [])
 
+  function addArticle({ currentLoc, homeLoc }) {
+    createArticle({ currentLoc, homeLoc }).then((article) => {
+      setArticle(article)
+      setArticles([article, ...articles])
+      setWriting(false)
+    })
+  }
+
   return page === "home" ? (
     <div>
       <button onClick={() => setPage("SafetyTips")}> SafetyTips </button>
