@@ -9,15 +9,16 @@ import {
   Timestamp,
 } from "firebase/firestore"
 
-const articles = {
-  zRChIS1sqn3mMp78wLPL: {
-    currentLoc: "Los Angeles",
-    homeLoc: "Cupertino",
-  },
-}
+// const articles = {
+//   zRChIS1sqn3mMp78wLPL: {
+//     currentLoc: "Los Angeles",
+//     homeLoc: "Cupertino",
+//   },
+// }
 export async function createArticle({ currentLoc, homeLoc }) {
   const data = { currentLoc, homeLoc }
   const docRef = await addDoc(collection(db, "articles"), data)
+  console.log("Is this happening")
   return { id: docRef.id, ...data }
 }
 

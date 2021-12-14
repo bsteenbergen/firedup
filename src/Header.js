@@ -41,12 +41,14 @@ const Header = () => {
   const [articles, setArticles] = useState([])
   const [article, setArticle] = useState(null)
   const [writing, setWriting] = useState(false)
+  const [currentLoc, setCurrentLoc] = useState("")
+  const [homeLoc, setHomeLoc] = useState("")
 
   useEffect(() => {
     fetchArticles().then(setArticles)
   }, [])
 
-  function addArticle({ currentLoc, homeLoc }) {
+  function addArticle() {
     createArticle({ currentLoc, homeLoc }).then((article) => {
       setArticle(article)
       setArticles([article, ...articles])
@@ -58,14 +60,24 @@ const Header = () => {
       <h1>FIREDUP!</h1>
       {/* <a href="./SafetyTips">Safety Tips</a> */}
       <label>
-        Home Location:
-        <input type="text" name="Home Location" />
+        Current Location:
+        <input
+          type="text"
+          name="Home Location"
+          value={currentLoc}
+          onChange={(e) => setCurrentLoc(e.target.value)}
+        />
       </label>
       <label>
-        Current Location:
-        <input type="text" name="Current Location" />
+        Home Location:
+        <input
+          type="text"
+          name="Current Location"
+          value={homeLoc}
+          onChange={(e) => setHomeLoc(e.target.value)}
+        />
       </label>
-      <button onClick={() => setWriting(false)}> Submit </button>
+      <button onClick={addArticle}> Submit </button>
       {writing ? (
         <LocationEntry addArticle={addArticle} />
       ) : (
