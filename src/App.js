@@ -23,7 +23,6 @@ export default function App() {
     const fetchEvents = async () => {
       const res = await fetch("https://eonet.gsfc.nasa.gov/api/v2.1/events")
       const { events } = await res.json()
-
       setEventData(events)
     }
     fetchEvents()
@@ -43,7 +42,7 @@ export default function App() {
       <Home eventData={eventData} user={user} />
     </div>
   ) : page == "SafetyTips" ? (
-    <SafetyTips eventData={eventData} user={user} />
+    <SafetyTips setPage={setPage} />
   ) : (
     "That's not supposed to happen"
   )
