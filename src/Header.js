@@ -6,52 +6,23 @@ import SafetyTips from "./SafetyTips"
 import { db } from "./firebaseConfig.js"
 import Location from "./Location.js"
 import LocationEntry from "./LocationEntry.js"
-import { fetchArticles, createArticle } from "./articleService"
-import {
-  collection,
-  query,
-  getDocs,
-  addDoc,
-  orderBy,
-  limit,
-  Timestamp,
-} from "firebase/firestore"
-
-// export async function createArticle({ currentLoc, homeLoc }) {
-//   const data = { currentLoc, homeLoc, date: Timestamp.now() }
-//   const docRef = await addDoc(collection(db, "articles"), data)
-//   return { id: docRef.id, ...data }
-// }
-
-// export async function fetchArticles() {
-//   const snapshot = await getDocs(
-//     query(
-//       collection(db, "articles"),
-//       orderBy("currentLoc", "homeLoc"),
-//       limit(20)
-//     )
-//   )
-//   return snapshot.docs.map((doc) => ({
-//     id: doc.id,
-//     ...doc.data(),
-//   }))
-// }
+import { fetchLocations, createLocation } from "./articleService"
 
 const Header = () => {
-  const [articles, setArticles] = useState([])
-  const [article, setArticle] = useState(null)
+  const [locations, setLocations] = useState([])
+  const [location, setLocation] = useState(null)
   const [writing, setWriting] = useState(false)
   const [currentLoc, setCurrentLoc] = useState("")
   const [homeLoc, setHomeLoc] = useState("")
 
   useEffect(() => {
-    fetchArticles().then(setArticles)
+    fetchLocations().then(setLocations)
   }, [])
 
-  function addArticle() {
-    createArticle({ currentLoc, homeLoc }).then((article) => {
-      setArticle(article)
-      setArticles([article, ...articles])
+  function addLocation() {
+    createLocation({ currentLoc, homeLoc }).then((location) => {
+      setLocation(location)
+      setLocations([location, ...locations])
       setWriting(false)
     })
   }
@@ -77,11 +48,11 @@ const Header = () => {
           onChange={(e) => setHomeLoc(e.target.value)}
         />
       </label>
-      <button onClick={addArticle}> Submit </button>
+      <button onClick={addLocation}> Submit </button>
       {writing ? (
-        <LocationEntry addArticle={addArticle} />
+        <LocationEntry addLocation={addLocation} />
       ) : (
-        <Location article={article} />
+        <Location location={location} />
       )}
     </div>
   )

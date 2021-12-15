@@ -1,14 +1,14 @@
-export default function Location({ article }) {
+export default function Location({ location }) {
   return (
     <article>
-      {!article ? (
+      {!location ? (
         <p></p>
       ) : (
         <location>
           <section>
-            <h2>{article.title}</h2>
-            <p className="currentLoc">{`Current Location: ${article.currentLoc}`}</p>
-            <p className="homeLoc">{`Home Location: ${article.homeLoc}`}</p>
+            <h2>{location.title}</h2>
+            <p className="currentLoc">{`Current Location: ${location.currentLoc}`}</p>
+            <p className="homeLoc">{`Home Location: ${location.homeLoc}`}</p>
           </section>
         </location>
       )}

@@ -9,23 +9,17 @@ import {
   Timestamp,
 } from "firebase/firestore"
 
-// const articles = {
-//   zRChIS1sqn3mMp78wLPL: {
-//     currentLoc: "Los Angeles",
-//     homeLoc: "Cupertino",
-//   },
-// }
-export async function createArticle({ currentLoc, homeLoc }) {
+export async function createLocation({ currentLoc, homeLoc }) {
   const data = { currentLoc, homeLoc }
-  const docRef = await addDoc(collection(db, "articles"), data)
+  const docRef = await addDoc(collection(db, "locations"), data)
   console.log("Is this happening")
   return { id: docRef.id, ...data }
 }
 
-export async function fetchArticles() {
+export async function fetchLocations() {
   const snapshot = await getDocs(
     query(
-      collection(db, "articles"),
+      collection(db, "locations"),
       orderBy("currentLoc", "homeLoc"),
       limit(20)
     )

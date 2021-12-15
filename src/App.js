@@ -2,22 +2,14 @@ import { useState, useEffect } from "react"
 import FireMap from "./FireMap.js"
 import Header from "./Header.js"
 import { SignIn, SignOut, useAuthentication } from "./authService.js"
-import { fetchArticles, createArticle } from "./articleService.js"
+import { fetchLocations, createLocation } from "./articleService.js"
 import SafetyTips from "./SafetyTips.js"
 import Home from "./Home.js"
 
 export default function App() {
   const [eventData, setEventData] = useState([])
   const user = useAuthentication()
-  const [articles, setArticles] = useState([])
-  const [article, setArticle] = useState(null)
-  const [writing, setWriting] = useState(false)
   const [page, setPage] = useState("home")
-  useEffect(() => {
-    if (user) {
-      fetchArticles().then(setArticles)
-    }
-  }, [user])
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -27,14 +19,6 @@ export default function App() {
     }
     fetchEvents()
   }, [])
-
-  function addArticle({ currentLoc, homeLoc }) {
-    createArticle({ currentLoc, homeLoc }).then((article) => {
-      setArticle(article)
-      setArticles([article, ...articles])
-      setWriting(false)
-    })
-  }
 
   return page === "home" ? (
     <div>
