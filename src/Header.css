@@ -4,9 +4,25 @@
   height: 10vh;
   width: 100vw;
   justify-content: center;
-  background-color:#F1933A;
+  background-color: #f1933a;
   margin-top: 10px;
-  
+  font-family: monospace;
+}
+
+label {
+  margin: 10px;
+}
+
+@font-face {
+  font-family: "lobster";
+  src: url("./lobster-regular-webfont.woff");
+}
+
+h1 {
+  font-family: lobster;
+  letter-spacing: 3px;
+  font-size: 60px;
+  text-shadow: 3px 3px white;
 }
 
 h1,
@@ -18,7 +34,36 @@ article {
   background-color: #daa38b;
 }
 
-#Submit, .button:hover {
+#Submit,
+.button:hover {
   background-color: #800020;
   color: white;
+  border-radius: 5px;
+}
+
+#Submit:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  input {
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 455px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  #Submit {
+    width: 50px;
+    font-size: 10px;
+  }
 }

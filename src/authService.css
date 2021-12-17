@@ -1,12 +1,44 @@
-#hello{
-    margin-left: 10px;;
-}
-#SignOut, .button:hover {
-    background-color: #800020;
-    color: white;
+#sign-out {
+  margin-left: 10px;
+  font-family: monospace;
 }
 
-#SignIn, .button:hover {
-    background-color: #800020;
-    color: white;
+#SignOut,
+.button:hover {
+  background-color: #800020;
+  color: white;
+  border-radius: 5px;
+}
+
+#SignIn,
+.button:hover {
+  background-color: #800020;
+  color: white;
+  border-radius: 5px;
+}
+
+#SignOut:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+#SignIn:hover {
+  background-color: antiquewhite;
+  color: black;
+}
+
+#fireplace {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #SignIn,
+  #SignOut {
+    width: 40px;
+    font-size: 10px;
+  }
 }

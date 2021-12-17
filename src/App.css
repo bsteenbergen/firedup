@@ -1,23 +1,31 @@
-html{
-    background-color: #F1933A;
+html {
+  background-color: #f1933a;
 }
+
 #SafeSection {
-   background-color: #F1933A;
-   margin-top: 10px;
-   height: 100vh;
+  background-color: #f1933a;
+  margin-top: 10px;
+  height: 100vh;
 }
 
-#SafeButton, .button {
-    top: 0;
-    right: 0;
-    transition-duration: 0.4s;
-    position: absolute;
-    margin-top: 10px;
-    margin-right: 10px;
-
+#SafeButton,
+.button {
+  top: 0;
+  right: 0;
+  transition-duration: 0.4s;
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 10px;
 }
-  
-#SafeButton, .button:hover {
-    background-color: #800020;
-    color: white;
+
+#SafeButton,
+.button:hover {
+  background-color: #800020;
+  color: white;
+  border-radius: 5px;
+}
+
+#SafeButton:hover {
+  background-color: antiquewhite;
+  color: black;
 }
