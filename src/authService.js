@@ -13,7 +13,7 @@ export function SignIn() {
 
 export function SignOut() {
   return (
-    <div>
+    <div id= "hello">
       Hello, {auth.currentUser.displayName} &nbsp;
       <button id = "SignOut" onClick={() => signOut(auth)}>Sign Out</button>
     </div>

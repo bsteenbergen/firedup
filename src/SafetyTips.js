@@ -6,10 +6,10 @@ const SafetyTips = ({setPage}) => {
   
   return (
     <div className="safetytips">
-      <h1>Stay Safe Friends</h1>
+      <h1 id="SSF" >Stay Safe Friends</h1>
       <button id= "homeB" onClick={() => setPage("home")}> Home </button>
-      <h2>Tips from American Red Cross</h2>
-      <div>
+      <h2 >Tips from American Red Cross</h2>
+      <div class ="tips">
         <ol>Install smoke alarms on every level of your home, 
             inside bedrooms and outside sleeping areas. </ol>
         <ol>Test smoke alarms every month. If they’re not working, 
@@ -20,7 +20,7 @@ const SafetyTips = ({setPage}) => {
             Never go back inside for anything or anyone.</ol>
       </div>
       <h2>Tips from Township of Edison</h2>
-      <div>
+      <div class = "tips">
         <ol>If your clothes catch fire, don't run. Stop where you are, drop to the 
           ground, cover your face with your hands, and roll over and over to smother 
           the flames. Cool the burn with water and call for help.</ol>

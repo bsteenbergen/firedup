@@ -1,0 +1,11 @@
+.storedLoc {
+    background-color: #EECC32;
+    z-index: 1;
+    padding: 0 20px;
+    margin: 20px;
+    font-size: 12px;
+}
+
+#holderP {
+    display: none;
+}

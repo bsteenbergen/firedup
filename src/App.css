@@ -1,9 +1,20 @@
+html{
+    background-color: #F1933A;
+}
 #SafeSection {
-   background-color: #cc5500;
+   background-color: #F1933A;
+   margin-top: 10px;
+   height: 100vh;
 }
 
 #SafeButton, .button {
+    top: 0;
+    right: 0;
     transition-duration: 0.4s;
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 10px;
+
 }
   
 #SafeButton, .button:hover {

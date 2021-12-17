@@ -2,15 +2,12 @@
   display: flex;
   align-items: center;
   height: 10vh;
-  background-color:#CC5500;
+  width: 100vw;
+  justify-content: center;
+  background-color:#F1933A;
+  margin-top: 10px;
   
 }
-
-/* #head{
-  padding-left: 10;
-  align-items: center;
-  align-content: center;
-} */
 
 h1,
 h2 {
