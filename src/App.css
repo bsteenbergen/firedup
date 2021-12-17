@@ -1,0 +1,12 @@
+#SafeSection {
+   background-color: #cc5500;
+}
+
+#SafeButton, .button {
+    transition-duration: 0.4s;
+}
+  
+#SafeButton, .button:hover {
+    background-color: #800020;
+    color: white;
+}

@@ -2,8 +2,15 @@
   display: flex;
   align-items: center;
   height: 10vh;
-  background-color: white;
+  background-color:#CC5500;
+  
 }
+
+/* #head{
+  padding-left: 10;
+  align-items: center;
+  align-content: center;
+} */
 
 h1,
 h2 {
@@ -12,4 +19,9 @@ h2 {
 
 article {
   background-color: #daa38b;
+}
+
+#Submit, .button:hover {
+  background-color: #800020;
+  color: white;
 }

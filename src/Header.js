@@ -27,7 +27,7 @@ const Header = () => {
     })
   }
   return (
-    <div className="header">
+    <div id= "head" className="header">
       <h1>FIREDUP!</h1>
       {/* <a href="./SafetyTips">Safety Tips</a> */}
       <label>
@@ -48,7 +48,7 @@ const Header = () => {
           onChange={(e) => setHomeLoc(e.target.value)}
         />
       </label>
-      <button onClick={addLocation}> Submit </button>
+      <button id="Submit" onClick={addLocation}> Submit </button>
       {writing ? (
         <LocationEntry addLocation={addLocation} />
       ) : (

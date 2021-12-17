@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 import { signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
 import { auth } from "./firebaseConfig.js"
+import "./authService.css"
 
 export function SignIn() {
   return (
-    <button onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}>
+    <button id = "SignIn" onClick={() => signInWithPopup(auth, new GoogleAuthProvider())}>
       Sign In
     </button>
   )
@@ -14,7 +15,7 @@ export function SignOut() {
   return (
     <div>
       Hello, {auth.currentUser.displayName} &nbsp;
-      <button onClick={() => signOut(auth)}>Sign Out</button>
+      <button id = "SignOut" onClick={() => signOut(auth)}>Sign Out</button>
     </div>
   )
 }

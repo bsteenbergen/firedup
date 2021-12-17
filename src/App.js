@@ -5,6 +5,7 @@ import { SignIn, SignOut, useAuthentication } from "./authService.js"
 import { fetchLocations, createLocation } from "./articleService.js"
 import SafetyTips from "./SafetyTips.js"
 import Home from "./Home.js"
+import "./App.css"
 
 export default function App() {
   const [eventData, setEventData] = useState([])
@@ -21,8 +22,8 @@ export default function App() {
   }, [])
 
   return page === "home" ? (
-    <div>
-      <button onClick={() => setPage("SafetyTips")}> SafetyTips </button>
+    <div id = "SafeSection">
+      <button id = "SafeButton" onClick={() => setPage("SafetyTips")}> SafetyTips </button>
       <Home eventData={eventData} user={user} />
     </div>
   ) : page == "SafetyTips" ? (

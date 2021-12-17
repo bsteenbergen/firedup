@@ -1,2 +1,14 @@
 .safetytips {
+    background-color: #CC5500;
+    background: fill;
+    padding-top: 0%;
+}
+
+#homeB, .button {
+    transition-duration: 0.4s;
+}
+  
+#homeB, .button:hover {
+    background-color: #800020;
+    color: white;
 }
